@@ -94,7 +94,7 @@ class OpenAIServingModels:
                 raise ValueError(load_result.message)
 
     def is_base_model(self, model_name):
-        return any(model.name == model_name for model in self.base_model_paths)
+        return model_name in self.base_model_paths
 
     def model_name(self, lora_request: Optional[LoRARequest] = None) -> str:
         """Returns the appropriate model name depending on the availability
